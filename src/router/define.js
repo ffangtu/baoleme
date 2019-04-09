@@ -1,0 +1,22 @@
+export default {
+    Start:{
+        path:'/',
+        name:'Start',
+        component:resolve=>require(['../components/modules/Start'],resolve)
+    },
+    Login:{
+        path:'/Login',
+        name:'Login',
+        component:resolve=>require(['../components/modules/Start/Login'],resolve)
+    },
+    Register:{
+        path:'/Register',
+        name:'Register',
+        component:resolve=>require(['../components/modules/Start/Register'],resolve)
+    },
+    Home:{
+        path:'/Home',
+        name:'Home',
+        component:resolve=>require(['../components/modules/Home'],resolve)
+    }
+}
