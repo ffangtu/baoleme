@@ -18,7 +18,6 @@ router.beforeEach((to, from, next) => {
   } else if (to.path === "/Login" || to.path === "/Register") {
     next()
   } else {
-    store.commit('changelogin',{});
     Notification({
       title: '警告',
       message: '请登录',

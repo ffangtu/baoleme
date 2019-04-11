@@ -24,9 +24,14 @@ export default {
         name: 'HomePage',
         component: resolve => require(['../components/modules/HomePage'], resolve)
     },
-    MyOrder: {
-        path: '/MyOrder',
-        name: 'MyOrder',
-        component: resolve => require(['../components/modules/MyOrder'], resolve)
+    MyOrders: {
+        path: '/MyOrders',
+        name: 'MyOrders',
+        component: resolve => require(['../components/modules/MyOrders'], resolve)
+    },
+    ManageFood: {
+        path: '/ManageFood',
+        name: 'ManageFood',
+        component: resolve => require(['../components/modules/ManageFood'], resolve)
     }
 }

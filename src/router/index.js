@@ -3,8 +3,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import define from './define'
 
-import {Notification} from 'element-ui';
-
 Vue.use(Router);
 
 const {
@@ -13,14 +11,15 @@ const {
     Register,
     Home,
     HomePage,
-    MyOrder
+    MyOrders,
+    ManageFood
 } = define;
 
 Start.redirect = 'Login';
 Start.children = [Login, Register];
 
 Home.redirect = 'HomePage';
-Home.children = [HomePage, MyOrder];
+Home.children = [HomePage, MyOrders,ManageFood];
 
 const router = new Router({
     routes: [

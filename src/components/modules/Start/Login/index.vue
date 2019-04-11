@@ -42,13 +42,20 @@
                 }
             }
         },
+        computed:{
+            isPhone() {
+                let myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+                return myreg.test(this.ruleForm.phone);
+            },
+        },
         methods: {
             submit() {
-                if (this.isPhone(this.ruleForm.phone)) {
+                if (this.isPhone) {
                     this.$axios.post('/api/users/login', {phone: this.ruleForm.phone, password: this.ruleForm.password})
                         .then(re => {
                             if (re.data.phone) {
-                                localStorage.setItem('user', JSON.stringify(re.data))
+                                localStorage.setItem('user', JSON.stringify(re.data));
+                                this.$store.commit('changelogin',re.data);
                                 this.$router.push({path: '/Home'});
                             } else {
                                 this.$notify.info({
@@ -69,10 +76,6 @@
                         message: '手机号码格式错误'
                     });
                 }
-            },
-            isPhone(phone) {
-                let myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
-                return myreg.test(phone);
             },
         }
     }
