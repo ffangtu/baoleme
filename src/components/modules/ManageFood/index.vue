@@ -91,12 +91,13 @@
                         this.$axios.post('/api/food/save', params)
                             .then(re => {
                                 console.log(re);
-                                if (re.data.massage === 'success') {
+                                if (re.data.message === 'success') {
                                     this.$message({
                                         message: '添加成功',
                                         type: 'success'
                                     });
-                                    this.resetForm('ruleForm')
+                                    this.resetForm('ruleForm');
+                                    this.ruleForm.FoodImg='';
                                 }
                             })
                             .catch(err => {
