@@ -88,7 +88,6 @@
                         let params = {};
                         this.ruleForm.FoodNumber = new Date().getTime();
                         params = JSON.parse(JSON.stringify(this.ruleForm));
-                        params.FoodImg = params.simPath;
                         this.$axios.post('/api/food/save', params)
                             .then(re => {
                                 console.log(re);
@@ -117,8 +116,7 @@
                 let formData = new FormData();
                 formData.append('avatar', item.file);
                 this.$axios.post('/api/foodimg/img', formData).then(re => {
-                    this.ruleForm.FoodImg = re.data.path;
-                    this.ruleForm.simPath = re.data.simPath
+                    this.ruleForm.FoodImg = 'http://'+window.location.hostname+':5000'+re.data.path;
                 }).catch(err => {
                     console.log(err)
                 })

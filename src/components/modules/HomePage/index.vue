@@ -47,6 +47,11 @@
                 })
                     .then(re => {
                         this.dataList=re.data;
+                        console.log(re);
+                        console.log(this.dataList)
+                       /* this.dataList.map(item=>{
+
+                        })*/
                     })
                     .catch(err => {
                         console.log(err)
