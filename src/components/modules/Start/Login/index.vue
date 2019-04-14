@@ -33,7 +33,7 @@
                 rules: {
                     phone: [
                         {required: true, message: '请输入正确的电话号码', trigger: 'blur'},
-                        {min: 11, max: 11, message: '长度为11为', trigger: 'blur'}
+                        {min: 11, max: 11, message: '长度为11位', trigger: 'blur'}
                     ],
                     password: [
                         {required: true, message: '请输入密码', trigger: 'blur'},
