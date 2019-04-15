@@ -1,6 +1,6 @@
-const CompressionWebpackPlugin = require('compression-webpack-plugin')
-const productionGzipExtensions = ['js', 'css']
-const isProduction = process.env.NODE_ENV === 'production'
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const productionGzipExtensions = ['js', 'css'];
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
     publicPath: './',
@@ -20,6 +20,7 @@ module.exports = {
     },
     configureWebpack: config => {
         if (isProduction) {
+            config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true;
             config.plugins.push(new CompressionWebpackPlugin({
                     algorithm: 'gzip',
                     test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),

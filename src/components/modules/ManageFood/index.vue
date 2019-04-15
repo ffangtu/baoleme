@@ -81,6 +81,11 @@
                 }
             };
         },
+        beforeRouteEnter(to, from, next) {
+            next(vm => {
+                to.params.data ? vm.ruleForm = to.params.data : ''
+            })
+        },
         methods: {
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
@@ -97,7 +102,7 @@
                                         type: 'success'
                                     });
                                     this.resetForm('ruleForm');
-                                    this.ruleForm.FoodImg='';
+                                    this.ruleForm.FoodImg = '';
                                 }
                             })
                             .catch(err => {
@@ -117,7 +122,7 @@
                 let formData = new FormData();
                 formData.append('avatar', item.file);
                 this.$axios.post('/api/foodimg/img', formData).then(re => {
-                    this.ruleForm.FoodImg = 'http://'+window.location.hostname+':5000'+re.data.path;
+                    this.ruleForm.FoodImg = 'http://' + window.location.hostname + ':5000' + re.data.path;
                 }).catch(err => {
                     console.log(err)
                 })
