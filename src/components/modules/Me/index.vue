@@ -41,7 +41,13 @@
       updata() {
         this.$axios.post('/api/users/updata', this.formLabelAlign)
           .then(re => {
-            console.log(re)
+            console.log(re);
+            if (re.data.message === 'success') {
+              this.$message({
+                message: '更新成功',
+                type: 'success'
+              });
+            }
           })
           .catch(err => {
             console.log(err)
