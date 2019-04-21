@@ -1,6 +1,6 @@
 export default {
   Start: {
-    path: '/',
+    path: '/Start',
     name: 'Start',
     component: resolve => require(['../components/modules/Start'], resolve)
   },
@@ -15,7 +15,7 @@ export default {
     component: resolve => require(['../components/modules/Start/Register'], resolve)
   },
   Home: {
-    path: '/Home',
+    path: '/',
     name: 'Home',
     component: resolve => require(['../components/modules/Home'], resolve)
   },
