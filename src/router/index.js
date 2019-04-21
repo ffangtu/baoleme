@@ -6,26 +6,27 @@ import define from './define'
 Vue.use(Router);
 
 const {
-    Start,
-    Login,
-    Register,
-    Home,
-    HomePage,
-    MyOrders,
-    ManageFood
+  Start,
+  Login,
+  Register,
+  Home,
+  HomePage,
+  MyOrders,
+  ManageFood,
+  Me
 } = define;
 
 Start.redirect = 'Login';
 Start.children = [Login, Register];
 
 Home.redirect = 'HomePage';
-Home.children = [HomePage, MyOrders,ManageFood];
+Home.children = [HomePage, MyOrders, ManageFood,Me];
 
 const router = new Router({
-    routes: [
-        Start,
-        Home,
-    ]
+  routes: [
+    Start,
+    Home,
+  ]
 });
 
 export default router;
