@@ -3,7 +3,7 @@ const productionGzipExtensions = ['js', 'css'];
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    publicPath: './',
+    publicPath: '/baoleme/',
     productionSourceMap: false,
     devServer: {
         https:false,
