@@ -26,7 +26,8 @@ const router = new Router({
   routes: [
     Start,
     Home,
-  ]
+  ],
+  mode: 'history'
 });
 
 export default router;
