@@ -27,7 +27,8 @@ const router = new Router({
     Start,
     Home,
   ],
-  mode: 'history'
+  mode: 'history',
+  base: '/baoleme/'
 });
 
 export default router;
